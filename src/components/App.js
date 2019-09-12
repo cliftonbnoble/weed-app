@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Inventory from './Inventory';
 import Order from './Order';
@@ -10,6 +11,10 @@ class App extends React.Component {
     state = {
         weed: {},
         order: {}
+    }
+
+    static propTypes = {
+        match: PropTypes.object
     }
 
     componentDidMount() {
@@ -80,7 +85,7 @@ this.setState({ weed });
         this.setState({ order });
     }
 
-    removeFromOrder = (key) => {
+    removeFromOrder = key => {
         //1. take a copy from state
         const order = { ...this.state.order }
         //2. remove the item from the order
@@ -116,6 +121,7 @@ render() {
         deleteWeed={this.deleteWeed}
         loadWeedSamples ={this.loadWeedSamples} 
         weed={this.state.weed}
+        storeId={this.props.match.params.storeId}
         />
         </div>
     );

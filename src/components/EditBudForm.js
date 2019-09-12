@@ -1,6 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-class EditFishForm extends React.Component {
+class EditBudForm extends React.Component {
+
+    static propTypes = {
+        weed: PropTypes.shape({
+            image: PropTypes.string,
+            name: PropTypes.string,
+            desc: PropTypes.string,
+            status: PropTypes.string,
+            price: PropTypes.number
+        }),
+        index: PropTypes.string,
+        updateWeed: PropTypes.func,
+    }
+
     handleChange = event => {
         //update that weed
         // 1. take a copy of current weed
@@ -28,4 +42,4 @@ class EditFishForm extends React.Component {
     }
 }
 
-export default EditFishForm;
+export default EditBudForm;

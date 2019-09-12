@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Header = (props) => (
+const Header = props => (
             <header className="top">
                 <h1>Bud 
                    <span className="ofThe">
@@ -14,6 +15,10 @@ const Header = (props) => (
                 </h3>
             </header>
         );
+
+        Header.propTypes = {
+            tagline: PropTypes.string.isRequired
+        }
 // class Header extends React.Component {
 //     render() {
 //         return (
